@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Form</title>
+</head>
+
+<body>
+
+    <form method="get" action="/calc">
+        <label>Number1</label>
+        <input type="number" name="Num1" id="N1" placeholder="Enter Num1"/><br><br>
+        <label>Number2</label>
+        <input type="number" name="Num2" id="N2" placeholder="Enter Num2"/><br><br>
+        <label>Operation</label>
+        <select name="formula" id="formula">
+
+            <option value="select operation">select operation</option>
+            <option value="addition">addition</option>
+            <option value="subtraction">subtraction</option>
+            <option value="multiplication">multiplication</option>
+            <option value="division">division</option>
+
+        </select>
+        <input type="submit" value="submit" id="SB"/>
+
+    </form>
+</body>
+
+</html>
