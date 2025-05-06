@@ -1,0 +1,41 @@
+html 
+    head 
+        title pug file 
+    body 
+        form(action="/data",method="get")
+
+            div 
+                label(for="name")
+                    |Name:
+                input(type="text" name="name" required)
+                br 
+                br
+            div 
+
+            div 
+                label(for="email")
+                    |Email:
+                input(type="email" name="email" required)
+                br
+                br 
+            div 
+
+            div 
+                label(for="Course")
+                |Course: 
+                input(type="radio" name="course" value="CE")
+                label(for="CE")|CE
+                input(type="radio" name="course" value="IT")
+                label(for="IT")|IT
+                input(type="radio" name="course" value="CSE")
+                label(for="CSE")|CSE
+                br
+                br
+            div 
+
+            div 
+                input(type="submit" value="submit") 
+            div 
+    body 
+html  
+
