@@ -1,19 +1,28 @@
 const expr = require('express')
-var pug = require('pug')
 const app = expr();
-app.set("view engine",pug)
-app.get("/",(req,res)=>{
-    res.render(__dirname+"/data.pug",{message:"Hello from Node",
-        name:"LJU",
-        id:21
-    });
+const router = expr.Router()
 
+
+
+const mvi = [{'id':101,'name':'ABC','year':2013,'rating':9.5},{'id':102,'name':'XYZ','year':2019,'rating':6.5},{'id':103,'name':'MNO','year':2015,'rating':8.8}];
+
+module.exports = router
+
+router.get("/",(req,res)=>{
+    res.json(mvi)
+    res.send()
 });
 
-app.listen(1224)
+router.get("/:id",(req,res)=>{
+    const id = parseInt(req.params.id)
+    const item = mvi.find(m => m.id === id)
+    // res.json(mvi)
 
-// write express js script to load student form using pug file which contain following fields.
-// 1. name
-// 2. email
-// 3. course (radio button)=> CE,IT,CSE
-//  once form is submitted, data must be displayed on "/data" page using    pug file.
+    if(item) {
+        res.json(item);
+    }
+    else {
+        res.status(404).send("item not found")
+    }
+});
+

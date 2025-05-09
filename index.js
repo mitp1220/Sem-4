@@ -1,14 +1,7 @@
-// var d = require("./calc.js")
-// console.log("addition is "+d.x(10,15))
-// console.log("multiplication is "+d.m(10,15))
+const expr = require('express')
+const app = expr();
+const m1 = require("./data")
 
-// or we can also do,
+app.use("/p",m1)
 
-// var {x,m} = require("./calc.js")
-// console.log("addition is "+x(10,15))
-// console.log("multiplication is "+m(10,15))
-
-var {add,mul,name} = require("./calc.js")
-console.log("multiplication is "+mul(10,15))
-console.log("addition is "+add(10,15))
-console.log(name)
+app.listen(1742)
