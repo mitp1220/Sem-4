@@ -21,7 +21,7 @@ const data = new mg.model("test1",myschema)
 
 app.post("/Signup7",async(req,res)=>{
     try{
-        const{username}=request.body;
+        const{username}=req.body;
         const newUser = new data({username})
         await newUser.save();
         res.send("Data Inserted")
